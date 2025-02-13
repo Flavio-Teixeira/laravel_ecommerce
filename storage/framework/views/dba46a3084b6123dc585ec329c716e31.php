@@ -32,7 +32,7 @@
             </select>
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-large btn-sucess">Criar loja</button>
+            <button type="submit" class="btn btn-large btn-success">Criar loja</button>
         </div>
     </form>
 

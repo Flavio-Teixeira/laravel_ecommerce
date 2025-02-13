@@ -1,4 +1,15 @@
 <?php return array (
+  'laracasts/flash' => 
+  array (
+    'aliases' => 
+    array (
+      'Flash' => 'Laracasts\\Flash\\Flash',
+    ),
+    'providers' => 
+    array (
+      0 => 'Laracasts\\Flash\\FlashServiceProvider',
+    ),
+  ),
   'laravel/pail' => 
   array (
     'providers' => 

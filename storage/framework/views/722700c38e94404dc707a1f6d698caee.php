@@ -10,6 +10,7 @@
 </head>
 <body>
     <div class="container">
+        <?php echo $__env->make('flash::message', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <?php echo $__env->yieldContent('content'); ?>
     </div>
 </body>

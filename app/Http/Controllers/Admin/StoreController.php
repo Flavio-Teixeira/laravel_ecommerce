@@ -31,6 +31,37 @@ class StoreController extends Controller
         $user = \App\Models\User::find($data['user']);
         $store = $user->store()->create($data);
 
-        return $store;
+        flash('Loja criada com sucesso!')->success();
+
+        return redirect('/admin/stores');
+    }
+
+    public function edit($store)
+    {
+        $store = \App\Models\Store::find($store);
+
+        return view('admin.stores.edit', compact('store'));
+    }
+
+    public function update(Request $request, $store)
+    {
+        $data = $request->all();
+
+        $store = \App\Models\Store::find($store);
+        $store->update($data);
+
+        flash('Loja atualizada com sucesso!')->success();
+
+        return redirect('/admin/stores');
+    }
+
+    public function destroy($store)
+    {
+        $store = \App\Models\Store::find($store);
+        $store->delete();
+
+        flash('Loja removida com sucesso!')->success();
+
+        return redirect('/admin/stores');
     }
 }

@@ -1,5 +1,7 @@
 <?php $__env->startSection('content'); ?>
 
+    <a href="/admin/stores/create" class="btn btn-sm btn-success">Criar loja</a>
+
     <table class="table table-striped">
         <thead>
             <tr>
@@ -13,13 +15,16 @@
                 <tr>
                     <td><?php echo e($store->id); ?></td>
                     <td><?php echo e($store->name); ?></td>
-                    <td></td>
+                    <td>
+                        <a href="/admin/stores/<?php echo e($store->id); ?>/edit" class="btn btn-sm btn-primary">Editar</a>
+                        <a href="/admin/stores/destroy/<?php echo e($store->id); ?>" class="btn btn-sm btn-danger">Apagar</a>
+                    </td>
                 </tr>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </tbody>
     </table>
 
-    <?php echo e($stores->links()); ?>
+    <?php echo e($stores->links('pagination::bootstrap-5')); ?>
 
 
 <?php $__env->stopSection(); ?>
